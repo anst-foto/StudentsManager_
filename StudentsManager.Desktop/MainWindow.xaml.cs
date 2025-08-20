@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Windows;
+using WpfApp4;
 
-namespace WpfApp4;
+namespace StudentsManager.Desktop;
 
 public partial class MainWindow : Window
 {
