@@ -1,0 +1,41 @@
+﻿<Window x:Class="WpfApp4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        
+        <ListBox x:Name="ListOfStudents"
+                 Grid.Column="0"/>
+        
+        <StackPanel Orientation="Vertical"
+                    Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="ID"
+                       Target="InputId"/>
+                <TextBox x:Name="InputId"
+                         IsReadOnly="True"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Фамилия"
+                       Target="InputLastName"/>
+                <TextBox x:Name="InputLastName"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Имя"
+                       Target="InputFirstName"/>
+                <TextBox x:Name="InputFirstName"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Сохранить"/>
+                <Button Content="Удалить"/>
+                <Button Content="Очистить"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
