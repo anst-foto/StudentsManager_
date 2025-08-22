@@ -1,4 +1,7 @@
-﻿namespace WpfApp4;
+﻿using System.IO;
+using System.Text.Json;
+
+namespace StudentsManager.Desktop;
 
 public class Account
 {
@@ -8,14 +11,14 @@ public class Account
     public required string FirstName { get; init; }
     
     public string FullName => $"{LastName} {FirstName}";
-    /*public string FullName
-    {
-        get
-        {
-            return $"{LastName} {FirstName}";
-        }
-    }*/
     
     public required string Login { get; init; }
     public required string Password { get; init; }
+
+    public static IEnumerable<Account>? Load(string path = "accounts.json")
+    {
+        var json = File.ReadAllText(path);
+        var accounts = JsonSerializer.Deserialize<IEnumerable<Account>>(json);
+        return accounts;
+    }
 }

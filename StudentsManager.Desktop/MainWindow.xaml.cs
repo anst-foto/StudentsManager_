@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using System.Windows;
-using WpfApp4;
 
 namespace StudentsManager.Desktop;
 

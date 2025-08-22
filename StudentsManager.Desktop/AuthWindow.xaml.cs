@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using WpfApp4;
 
 namespace StudentsManager.Desktop;
 
@@ -12,20 +11,25 @@ public partial class AuthWindow : Window
 
     private void Button_Auth_OnClick(object sender, RoutedEventArgs e)
     {
-        /*var mainWindow = new MainWindow();
-        mainWindow.Owner = this;
-        mainWindow.ShowDialog();*/
+        var login = Input_Login.Text;
+        var password = Input_Password.Password;
+        
+        var accounts = Account.Load();
+        var account = accounts?.SingleOrDefault(a => a.Login == login && a.Password == password);
 
+        if (account == null)
+        {
+            MessageBox.Show(
+                messageBoxText:"Неверный логин или пароль",
+                caption:"Ошибка",
+                MessageBoxButton.OK,
+                icon:MessageBoxImage.Error);
+            return;
+        }
+        
         var mainWindow = new MainWindow()
         {
-            Account = new Account()
-            {
-                Id = Guid.NewGuid(),
-                LastName = "Starinin",
-                FirstName = "Andrey",
-                Login = "admin",
-                Password = "12345"
-            }
+            Account = account
         };
         mainWindow.Show();
         

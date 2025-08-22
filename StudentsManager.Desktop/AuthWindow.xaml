@@ -4,7 +4,9 @@
         
         Title="AuthWindow" 
         
-        Height="450" Width="800">
+        Height="450" Width="800"
+        
+        WindowStartupLocation="CenterOwner">
     <Window.Resources>
         <ResourceDictionary Source="Styles.xaml"/>
     </Window.Resources>
@@ -14,25 +16,39 @@
         
         <StackPanel Orientation="Horizontal">
             <Label Content="Логин"
-                   Target="Input_Login"/>
-            <TextBox x:Name="Input_Login"/>
+                   Target="Input_Login"
+                   Style="{StaticResource ResourceKey=Style_Label}"/>
+            <TextBox x:Name="Input_Login"
+                     Style="{StaticResource ResourceKey=Style_Input_Login}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label Content="Пароль"
-                   Target="Input_Password"/>
-            <PasswordBox x:Name="Input_Password"/>
+                   Target="Input_Password"
+                   Style="{StaticResource ResourceKey=Style_Label}"/>
+            <PasswordBox x:Name="Input_Password"
+                         Style="{StaticResource ResourceKey=Style_Input_Password}"/>
         </StackPanel>
         
         <StackPanel Orientation="Horizontal">
             <Button x:Name="Button_Auth" 
                     Content="Войти"
                     Template="{StaticResource ResourceKey=Template_Button_Radius_5}"
-                    Style="{StaticResource ResourceKey=Style_Button_Auth}"
-                    Click="Button_Auth_OnClick"/>
+                    Click="Button_Auth_OnClick">
+                <Button.Resources>
+                    <Style TargetType="{x:Type TypeName=Button}"
+                           BasedOn="{StaticResource ResourceKey=Style_Button_Auth}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=Input_Login, Path=Text}" Value="">
+                                <Setter Property="IsEnabled" Value="False"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Resources>
+            </Button>
 
             <Button x:Name="Button_Cancel"
                     Content="Отмена"
-                    Template="{StaticResource ResourceKey=Template_Button_Radius_50}"
+                    Template="{StaticResource ResourceKey=Template_Button_Radius_5}"
                     Style="{StaticResource ResourceKey=Style_Button_Cancel}"
                     Click="Button_Cancel_OnClick"/>
         </StackPanel>
