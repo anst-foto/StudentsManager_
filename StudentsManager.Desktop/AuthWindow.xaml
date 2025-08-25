@@ -1,6 +1,7 @@
 ﻿<Window x:Class="StudentsManager.Desktop.AuthWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:StudentsManager.Desktop"
         
         Title="AuthWindow" 
         
@@ -14,13 +15,8 @@
     <StackPanel Orientation="Vertical">
         <TextBlock Text="Авторизация"/>
         
-        <StackPanel Orientation="Horizontal">
-            <Label Content="Логин"
-                   Target="Input_Login"
-                   Style="{StaticResource ResourceKey=Style_Label}"/>
-            <TextBox x:Name="Input_Login"
-                     Style="{StaticResource ResourceKey=Style_Input_Login}"/>
-        </StackPanel>
+        <local:InputComponent x:Name="Input_Login"
+                              LabelText="Логин"/>
         <StackPanel Orientation="Horizontal">
             <Label Content="Пароль"
                    Target="Input_Password"

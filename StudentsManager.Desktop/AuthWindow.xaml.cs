@@ -11,7 +11,7 @@ public partial class AuthWindow : Window
 
     private void Button_Auth_OnClick(object sender, RoutedEventArgs e)
     {
-        var login = Input_Login.Text;
+        var login = Input_Login.Input.Text;
         var password = Input_Password.Password;
         
         var accounts = Account.Load();

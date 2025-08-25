@@ -66,7 +66,7 @@
         <Setter Property="Control.HorizontalContentAlignment" Value="Right"/>
         <Setter Property="Control.Padding" Value="3"/>
     </Style>
-    <Style x:Key="Style_Input_Login" TargetType="{x:Type TypeName=TextBox}"
+    <Style x:Key="Style_Input" TargetType="{x:Type TypeName=TextBox}"
            BasedOn="{StaticResource ResourceKey=Style_InputDefault}">
     </Style>
     <Style x:Key="Style_Input_Password" TargetType="{x:Type TypeName=PasswordBox}"
