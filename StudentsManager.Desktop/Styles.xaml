@@ -62,7 +62,6 @@
     
     <Style x:Key="Style_InputDefault"
            BasedOn="{StaticResource ResourceKey=Style_Default}">
-        <Setter Property="Control.Width" Value="250"/>
         <Setter Property="Control.HorizontalContentAlignment" Value="Right"/>
         <Setter Property="Control.Padding" Value="3"/>
     </Style>
@@ -76,7 +75,6 @@
     
     <Style x:Key="Style_Label" TargetType="{x:Type TypeName=Label}"
            BasedOn="{StaticResource ResourceKey=Style_Default}">
-        <Setter Property="Width" Value="100"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
     </Style>
 </ResourceDictionary>

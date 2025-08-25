@@ -5,11 +5,17 @@
         <ResourceDictionary Source="Styles.xaml"/>
     </UserControl.Resources>
     
-    <StackPanel Orientation="Horizontal">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
         <Label x:Name="Label_Input"
                Target="Input"
-               Style="{StaticResource ResourceKey=Style_Label}"/>
+               Style="{StaticResource ResourceKey=Style_Label}"
+               Grid.Column="0"/>
         <TextBox x:Name="Input"
-                 Style="{StaticResource ResourceKey=Style_Input}"/>
-    </StackPanel>
+                 Style="{StaticResource ResourceKey=Style_Input}"
+                 Grid.Column="1"/>
+    </Grid>
 </UserControl>
