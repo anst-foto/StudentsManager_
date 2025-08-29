@@ -1,0 +1,24 @@
+﻿<c:InputComponent x:Class="StudentsManager.Desktop.Components.InputTextComponent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:c="clr-namespace:StudentsManager.Desktop.Components">
+    <c:InputComponent.Resources>
+        <ResourceDictionary Source="../Styles.xaml"/>
+    </c:InputComponent.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="Label_Input"
+               Content="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type c:InputComponent}}, Path=LabelContent}"
+               Target="Input"
+               Style="{StaticResource ResourceKey=Style_Label}"
+               Grid.Column="0"/>
+        <TextBox x:Name="Input"
+                 Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type c:InputComponent}}, Path=InputText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Style="{StaticResource ResourceKey=Style_Input}"
+                 Grid.Column="1"/>
+    </Grid>
+</c:InputComponent>

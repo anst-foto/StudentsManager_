@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Windows;
+using StudentsManager.Desktop.Model;
 
-namespace StudentsManager.Desktop;
+namespace StudentsManager.Desktop.Windows;
 
 public partial class MainWindow : Window
 {

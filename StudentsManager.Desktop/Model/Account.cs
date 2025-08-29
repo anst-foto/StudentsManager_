@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Text.Json;
 
-namespace StudentsManager.Desktop;
+namespace StudentsManager.Desktop.Model;
 
 public class Account
 {

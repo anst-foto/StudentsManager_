@@ -1,29 +1,24 @@
-﻿<Window x:Class="StudentsManager.Desktop.AuthWindow"
+﻿<Window x:Class="StudentsManager.Desktop.Windows.AuthWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="clr-namespace:StudentsManager.Desktop"
-        
+        xmlns:c="clr-namespace:StudentsManager.Desktop.Components"
+
         Title="AuthWindow" 
         
         Height="450" Width="800"
         
         WindowStartupLocation="CenterOwner">
     <Window.Resources>
-        <ResourceDictionary Source="Styles.xaml"/>
+        <ResourceDictionary Source="../Styles.xaml"/>
     </Window.Resources>
     
     <StackPanel Orientation="Vertical">
         <TextBlock Text="Авторизация"/>
         
-        <local:InputComponent x:Name="Input_Login"
-                              LabelText="Логин"/>
-        <StackPanel Orientation="Horizontal">
-            <Label Content="Пароль"
-                   Target="Input_Password"
-                   Style="{StaticResource ResourceKey=Style_Label}"/>
-            <PasswordBox x:Name="Input_Password"
-                         Style="{StaticResource ResourceKey=Style_Input_Password}"/>
-        </StackPanel>
+        <c:InputTextComponent x:Name="Input_Login"
+                              LabelContent="Логин"/>
+        <c:InputPasswordComponent x:Name="Input_Password"
+                                  LabelContent="Пароль"/>
         
         <StackPanel Orientation="Horizontal">
             <Button x:Name="Button_Auth" 
@@ -34,7 +29,12 @@
                     <Style TargetType="{x:Type TypeName=Button}"
                            BasedOn="{StaticResource ResourceKey=Style_Button_Auth}">
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding ElementName=Input_Login, Path=Text}" Value="">
+                            <DataTrigger Binding="{Binding ElementName=Input_Login, Path=InputText}" 
+                                         Value="">
+                                <Setter Property="IsEnabled" Value="False"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ElementName=Input_Password, Path=InputPassword}" 
+                                         Value="">
                                 <Setter Property="IsEnabled" Value="False"/>
                             </DataTrigger>
                         </Style.Triggers>

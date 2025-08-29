@@ -1,8 +1,8 @@
-﻿<Window x:Class="StudentsManager.Desktop.MainWindow"
+﻿<Window x:Class="StudentsManager.Desktop.Windows.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="clr-namespace:StudentsManager.Desktop"
-        
+        xmlns:c="clr-namespace:StudentsManager.Desktop.Components"
+
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -15,12 +15,12 @@
         
         <StackPanel Orientation="Vertical"
                     Grid.Column="1">
-            <local:InputComponent x:Name="InputId"
-                                  LabelText="ID"/>
-            <local:InputComponent x:Name="InputLastName"
-                                  LabelText="Фамилия"/>
-            <local:InputComponent x:Name="InputFirstName"
-                                  LabelText="Имя"/>
+            <c:InputTextComponent x:Name="InputId"
+                              LabelContent="ID"/>
+            <c:InputTextComponent x:Name="InputLastName"
+                              LabelContent="Фамилия"/>
+            <c:InputTextComponent x:Name="InputFirstName"
+                              LabelContent="Имя"/>
             
             <StackPanel Orientation="Horizontal">
                 <Button Content="Сохранить"/>

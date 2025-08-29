@@ -1,6 +1,7 @@
 ﻿using System.Windows;
+using StudentsManager.Desktop.Model;
 
-namespace StudentsManager.Desktop;
+namespace StudentsManager.Desktop.Windows;
 
 public partial class AuthWindow : Window
 {
@@ -11,8 +12,8 @@ public partial class AuthWindow : Window
 
     private void Button_Auth_OnClick(object sender, RoutedEventArgs e)
     {
-        var login = Input_Login.Input.Text;
-        var password = Input_Password.Password;
+        var login = Input_Login.InputText;
+        var password = Input_Password.InputPassword;
         
         var accounts = Account.Load();
         var account = accounts?.SingleOrDefault(a => a.Login == login && a.Password == password);
