@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Linq;
+using System.Windows;
 using StudentsManager.Desktop.Model;
 
 namespace StudentsManager.Desktop.Windows;

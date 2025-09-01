@@ -1,16 +1,16 @@
 ﻿[
   {
-    "Id": "4EB71959-D90E-4069-B621-6AD87B0D7C65",
-    "LastName": "Starinin",
-    "FirstName": "Andrey",
-    "Login": "admin",
-    "Password": "12345"
+    "id": "4EB71959-D90E-4069-B621-6AD87B0D7C65",
+    "last_name": "Starinin",
+    "first_name": "Andrey",
+    "login": "admin",
+    "password": "12345"
   },
   {
-    "Id": "0198d2e8-0536-7422-82d1-9600d83d5c7e",
-    "LastName": "Anonimus",
-    "FirstName": "Anonim",
-    "Login": "anonym",
-    "Password": "12345"
+    "id": "0198d2e8-0536-7422-82d1-9600d83d5c7e",
+    "last_name": "Anonimus",
+    "first_name": "Anonim",
+    "login": "anonym",
+    "password": "12345"
   }
 ]
