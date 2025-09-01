@@ -12,10 +12,10 @@ public class Student
     public required Guid Id { get; init; }
     
     [JsonPropertyName("last_name")]
-    public required string LastName { get; init; }
+    public required string LastName { get; set; }
     
     [JsonPropertyName("first_name")]
-    public required string FirstName { get; init; }
+    public required string FirstName { get; set; }
     
     [JsonIgnore]
     public string FullName => $"{LastName} {FirstName}";
@@ -24,7 +24,7 @@ public class Student
     public Uri? Photo { get; set; }
     
     [JsonPropertyName("faculty")]
-    public required string Faculty { get; init; }
+    public required string Faculty { get; set; }
     
     public static IEnumerable<Student>? Load(string path = "students.json")
     {

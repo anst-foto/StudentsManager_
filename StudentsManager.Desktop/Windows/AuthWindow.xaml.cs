@@ -16,7 +16,7 @@ public partial class AuthWindow : Window
         var login = Input_Login.InputText;
         var password = Input_Password.InputPassword;
         
-        var accounts = Account.Load();
+        var accounts = Account.Load(@"DB\accounts.json");
         var account = accounts?.SingleOrDefault(a => a.Login == login && a.Password == password);
 
         if (account == null)
