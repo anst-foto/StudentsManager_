@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 using StudentsManager.Desktop.Model;
 
 namespace StudentsManager.Desktop.Windows;
@@ -64,6 +65,10 @@ public partial class MainWindow : Window
         InputId.InputText = student.Id.ToString();
         InputLastName.InputText = student.LastName;
         InputFirstName.InputText = student.FirstName;
+
+        Photo.Source = student.Photo is not null 
+            ? new BitmapImage(student.Photo) 
+            : null;
     }
 
     private void Clear()

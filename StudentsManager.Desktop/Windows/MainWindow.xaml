@@ -35,6 +35,7 @@
                               LabelContent="Фамилия"/>
             <c:InputTextComponent x:Name="InputFirstName"
                               LabelContent="Имя"/>
+            <Image x:Name="Photo" Width="250"/>
             
             <StackPanel Orientation="Horizontal">
                 <Button Content="Сохранить"
