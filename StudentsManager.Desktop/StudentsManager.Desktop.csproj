@@ -12,6 +12,7 @@
       <None Update="DB\*.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
+        <Resource Include="Assert\*.*" />
     </ItemGroup>
 
     <ItemGroup>
@@ -31,5 +32,4 @@
         <SubType>Designer</SubType>
       </Page>
     </ItemGroup>
-
 </Project>
